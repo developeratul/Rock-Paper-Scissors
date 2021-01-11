@@ -25,7 +25,7 @@ function finalMessage([yourScore, botScore]) {
   if (yourScore === 0) {
     return { message: 'You Lost', color: 'red' }
   } else if (yourScore === 0.5) {
-    return { message: 'You Tied', color: 'Yellow' }
+    return { message: 'You Tied', color: '#D9D926' }
   } else {
     return { message: 'You Won', color: 'green' }
   }
@@ -54,12 +54,12 @@ const gameFrontEnd = (humanImageChoice, BotImageChoice, finalMessage) => {
 
   //Adding them
 
-  humanDiv.innerHTML = ` <img style=" box-shadow: '1px 2px 20px blue' " src="${imgData[humanImageChoice]}"/> `
-  resultDiv.innerHTML = ` <h2>  </h2> `
-  botDiv.innerHTML = ` <img style=" box-shadow: '1px 2px 20px blue' " src="${imgData[BotImageChoice]}"/> `
+  humanDiv.innerHTML = ` <img style='box-shadow: 1px 2px 20px blue' src="${imgData[humanImageChoice]}"/> `
+  resultDiv.innerHTML = ` <h2 style=" color: ${finalMessage['color']}; font-size: 2rem; text-align: center; padding: 10px "> ${finalMessage['message']} </h2> `
+  botDiv.innerHTML = ` <img style='box-shadow: 1px 2px 20px red'  src="${imgData[BotImageChoice]}"/> `
 
   //Showing item
-
-  document.querySelector('#SingleImage').appendChild(humanDiv)
-  document.querySelector('#SingleImage').appendChild(botDiv)
+  document.querySelector('#MainWarpper').appendChild(humanDiv)
+  document.querySelector('#MainWarpper').appendChild(resultDiv)
+  document.querySelector('#MainWarpper').appendChild(botDiv)
 }

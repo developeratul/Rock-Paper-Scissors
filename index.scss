@@ -49,10 +49,21 @@ header {
   display: grid;
   align-items: center;
   #MainWarpper {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    display: flex !important;
+    justify-content: space-around !important;
+    align-items: center !important;
     flex-wrap: wrap;
+    text-align: center;
+    div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 20px 10% !important;
+      img {
+        width: 200px;
+        display: block;
+      }
+    }
     #SingleImage {
       width: 200px;
       margin: 20px 0px;
@@ -94,5 +105,17 @@ header {
   }
   #Title {
     margin-bottom: 20px;
+  }
+  #MainWarpper {
+    div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 20px 20px;
+      img {
+        width: 200px;
+        display: block;
+      }
+    }
   }
 }
