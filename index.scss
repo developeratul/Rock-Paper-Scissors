@@ -60,6 +60,7 @@ header {
         transition: 0.2s;
         &:hover {
           box-shadow: 1px 2px 20px #ddd;
+          transform: scale(1.02);
         }
       }
     }

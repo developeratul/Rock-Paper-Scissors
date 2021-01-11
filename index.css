@@ -99,6 +99,8 @@ header #HeaderContentWrapper #HaderTitle h2 {
 #MainContent #MainWarpper #SingleImage img:hover {
   -webkit-box-shadow: 1px 2px 20px #ddd;
           box-shadow: 1px 2px 20px #ddd;
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
 }
 
 #Title {
