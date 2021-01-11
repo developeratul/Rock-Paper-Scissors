@@ -5,7 +5,7 @@ const game = (choice) => {
   console.log(bot)
   var result = decideWinner(human, bot)
   var message = finalMessage(result)
-  console.log(message)
+  gameFrontEnd(choice.id, bot, message)
 }
 const botChoice = () => {
   number = Math.floor(Math.random() * 3)
@@ -29,4 +29,37 @@ function finalMessage([yourScore, botScore]) {
   } else {
     return { message: 'You Won', color: 'green' }
   }
+}
+
+const gameFrontEnd = (humanImageChoice, BotImageChoice, finalMessage) => {
+  //adding src data to show images after removing the current front-end images
+
+  var imgData = {
+    Rock: document.getElementById('Rock').src,
+    Paper: document.getElementById('Paper').src,
+    Scissors: document.getElementById('Scissors').src,
+  }
+
+  //removing all the images from the front end
+
+  document.getElementById('Rock').remove()
+  document.getElementById('Paper').remove()
+  document.getElementById('Scissors').remove()
+
+  //Creating the div's to show the results in the front-ends
+
+  var humanDiv = document.createElement('div')
+  var botDiv = document.createElement('div')
+  var resultDiv = document.createElement('div')
+
+  //Adding them
+
+  humanDiv.innerHTML = ` <img style=" box-shadow: '1px 2px 20px blue' " src="${imgData[humanImageChoice]}"/> `
+  resultDiv.innerHTML = ` <h2>  </h2> `
+  botDiv.innerHTML = ` <img style=" box-shadow: '1px 2px 20px blue' " src="${imgData[BotImageChoice]}"/> `
+
+  //Showing item
+
+  document.querySelector('#SingleImage').appendChild(humanDiv)
+  document.querySelector('#SingleImage').appendChild(botDiv)
 }
