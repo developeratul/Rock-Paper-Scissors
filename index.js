@@ -1,3 +1,5 @@
+
+//all are here.
 const game = (choice) => {
   var human, bot
   human = choice.id
@@ -31,35 +33,52 @@ function finalMessage([yourScore, botScore]) {
   }
 }
 
+
+
+
+
 const gameFrontEnd = (humanImageChoice, BotImageChoice, finalMessage) => {
   //adding src data to show images after removing the current front-end images
-
+  
   var imgData = {
     Rock: document.getElementById('Rock').src,
     Paper: document.getElementById('Paper').src,
     Scissors: document.getElementById('Scissors').src,
   }
 
+  
   //removing all the images from the front end
 
   document.getElementById('Rock').remove()
   document.getElementById('Paper').remove()
   document.getElementById('Scissors').remove()
 
+  
   //Creating the div's to show the results in the front-ends
 
   var humanDiv = document.createElement('div')
   var botDiv = document.createElement('div')
   var resultDiv = document.createElement('div')
 
+  
   //Adding them
 
   humanDiv.innerHTML = ` <img style='box-shadow: 1px 2px 20px blue' src="${imgData[humanImageChoice]}"/> `
   resultDiv.innerHTML = ` <h2 style=" color: ${finalMessage['color']}; font-size: 2rem; text-align: center; padding: 10px "> ${finalMessage['message']} </h2> `
   botDiv.innerHTML = ` <img style='box-shadow: 1px 2px 20px red'  src="${imgData[BotImageChoice]}"/> `
 
+  
   //Showing item
   document.querySelector('#MainWarpper').appendChild(humanDiv)
   document.querySelector('#MainWarpper').appendChild(resultDiv)
   document.querySelector('#MainWarpper').appendChild(botDiv)
 }
+
+
+
+
+
+ // That's all.
+// Thanks for viewing my code.
+// If you have any suggestion for me, please let me know.
+//If you have got any bugs so please report me.
