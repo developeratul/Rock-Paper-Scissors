@@ -75,7 +75,18 @@ const gameFrontEnd = (humanImageChoice, BotImageChoice, finalMessage) => {
 }
 
 
-
+Swal.fire({
+  title: 'Welcome To RPS Game.',
+  width: 400,
+  padding: '3em',
+  background: '#fff url(/images/trees.png)',
+  backdrop: `
+      rgba(0,0,123,0.4)
+      url("./img/RPS.jpg")
+      center
+      no-repeat
+    `,
+})
 
 
  // That's all.
